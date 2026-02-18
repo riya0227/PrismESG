@@ -1,0 +1,121 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<h3 class="mb-4">ESG Dashboard</h3>
+
+<div class="container-fluid">
+
+    <!-- ESG SCORE CARDS -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5>Environmental</h5>
+                    <h3>72</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5>Social</h5>
+                    <h3>65</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5>Governance</h5>
+                    <h3>80</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                    <h5>Overall ESG</h5>
+                    <h3>72</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row mb-3">
+
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5>ESG Distribution</h5>
+                <canvas id="esgChart"  height="100"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+
+<!-- Reports Table -->
+<div class="card">
+    <div class="card-body">
+        <h5>Recent Reports</h5>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.title }}</td>
+                    <td>{{ report.uploaded_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const canvas = document.getElementById('esgChart');
+
+    if (!canvas) {
+        console.log("Canvas not found");
+        return;
+    }
+
+    const environmental = parseInt("{{ esg_data.environmental }}");
+    const social = parseInt("{{ esg_data.social }}");
+    const governance = parseInt("{{ esg_data.governance }}");
+
+    new Chart(canvas, {
+        type: 'pie',
+        data: {
+            labels: ['Environmental', 'Social', 'Governance'],
+            datasets: [{
+                data: [environmental, social, governance]
+            }]
+        }
+    });
+
+});
+</script>
+
+
+{% endblock %}
+
+
+
+
+

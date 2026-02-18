@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<h2>Edit Report</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p>{{ report.title }}</p>
+
+    <input type="file" name="pdf_file">
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}
