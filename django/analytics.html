@@ -1,0 +1,42 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="mb-4">Analytics</h2>
+
+    <div class="row">
+
+        <!-- ESG Score Cards -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-success shadow-sm p-3">
+                <h5>Environmental</h5>
+                <h3>72</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-primary shadow-sm p-3">
+                <h5>Social</h5>
+                <h3>65</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-warning shadow-sm p-3">
+                <h5>Governance</h5>
+                <h3>80</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm p-4 mt-4">
+        <h5>Reports Summary</h5>
+        <p>Total Reports: {{ reports|length }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

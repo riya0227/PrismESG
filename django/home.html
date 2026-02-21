@@ -1,0 +1,134 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<style>
+.hero-section {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #1f2a36, #2c3e50);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.feature-card {
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.footer {
+    background: #1f2a36;
+    color: white;
+    padding: 30px 0;
+}
+</style>
+
+<!-- HERO SECTION -->
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-3 fw-bold">
+            AI-Powered ESG & BRSR Intelligence
+        </h1>
+
+        <p class="lead mt-4">
+            Transform unstructured ESG reports into structured,
+            explainable, regulatory-aligned insights.
+        </p>
+
+        <div class="mt-5">
+            <a href="{% url 'dashboard' %}" class="btn btn-light btn-lg me-3">
+                Explore Dashboard
+            </a>
+
+            <a href="{% url 'upload_report' %}" class="btn btn-outline-light btn-lg">
+                Upload ESG Report
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- STATS SECTION -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <div class="col-md-4 stat-box">
+            <h2 class="fw-bold text-dark">100+</h2>
+            <p class="text-muted">ESG Indicators Mapped</p>
+        </div>
+
+        <div class="col-md-4 stat-box">
+            <h2 class="fw-bold text-dark">9</h2>
+            <p class="text-muted">BRSR Principles Covered</p>
+        </div>
+
+        <div class="col-md-4 stat-box">
+            <h2 class="fw-bold text-dark">AI</h2>
+            <p class="text-muted">Powered ESG Analysis</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="container mt-5 mb-5">
+
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">How It Works</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 feature-card">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold">1. Upload Report</h5>
+                    <p>
+                        Upload annual or sustainability reports in PDF format.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 feature-card">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold">2. AI Processing</h5>
+                    <p>
+                        Extract ESG disclosures using NLP and structured mapping logic.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 feature-card">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold">3. View Insights</h5>
+                    <p>
+                        Analyze ESG scores, disclosure gaps, and compliance indicators.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer text-center">
+    <div class="container">
+        <p class="mb-0">
+            © 2026 ESG Intelligence Platform | Academic Research Project
+        </p>
+    </div>
+</div>
+
+{% endblock %}
