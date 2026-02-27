@@ -17,5 +17,11 @@ class ESGReport(models.Model):
         default='pending'
     )
 
+    extracted_text = models.TextField(blank=True, null=True)
+
+    environmental_score = models.FloatField(default=0)
+    social_score = models.FloatField(default=0)
+    governance_score = models.FloatField(default=0)
+
     def __str__(self):
         return self.title
