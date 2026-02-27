@@ -1,0 +1,91 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+
+    <h3 class="fw-bold mb-4">Disclosure Gap Analysis</h3>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h6>Total Indicators</h6>
+                    <h4 class="fw-bold">120</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h6>Disclosed</h6>
+                    <h4 class="fw-bold text-success">102</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h6>Missing</h6>
+                    <h4 class="fw-bold text-danger">18</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h6>Risk Level</h6>
+                    <h4 class="fw-bold text-warning">Medium</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Missing Disclosure Table -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-3">
+                <i class="bi bi-exclamation-triangle"></i> Missing Disclosures
+            </h5>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Category</th>
+                            <th>Severity</th>
+                            <th>Impact</th>
+                            <th>Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scope 3 Emissions</td>
+                            <td><span class="badge bg-success">Environmental</span></td>
+                            <td><span class="badge bg-danger">High</span></td>
+                            <td>Investor Risk</td>
+                            <td>Add supply chain carbon data disclosure</td>
+                        </tr>
+                        <tr>
+                            <td>Supplier Audit Disclosure</td>
+                            <td><span class="badge bg-primary">Social</span></td>
+                            <td><span class="badge bg-warning text-dark">Medium</span></td>
+                            <td>Reputation Risk</td>
+                            <td>Include third-party audit summary</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
