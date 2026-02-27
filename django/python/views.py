@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import ESGReport
 
+from prism_esg.modules.pipeline import run_full_pipeline
 
 # HOME PAGE
 def home(request):
@@ -13,13 +14,32 @@ def upload_report(request):
         title = request.POST.get('title')
         pdf = request.FILES.get('pdf_file')
 
-        ESGReport.objects.create(
+        # Step 1: Save report initially
+        report = ESGReport.objects.create(
             title=title,
             pdf_file=pdf,
             status='pending'
         )
 
-        return render(request, 'dashboard/upload.html', {'success': True})
+        try:
+            # Step 2: Extract text from saved PDF
+            pdf_path = report.pdf_file.path
+            full_text = ""
+
+            for page_number, text in extract_pages(pdf_path):
+                full_text += text + " "
+
+            # Step 3: Save extracted text
+            report.extracted_text = full_text
+            report.status = 'processed'
+
+        except Exception as e:
+            print("Extraction Error:", e)
+            report.status = 'incomplete'
+
+        report.save()
+
+        return redirect('report_list')
 
     return render(request, 'dashboard/upload.html')
 
@@ -89,5 +109,17 @@ def analytics(request):
     }
 
     return render(request, "dashboard/analytics.html", context)
+
+
+from django.contrib.auth.decorators import login_required
+
+def profile(request):
+    return render(request, 'dashboard/profile.html')
+
+def report_detail(request):
+    return render(request, "dashboard/report_detail.html")
+
+def gap_analysis(request):
+    return render(request, "dashboard/gap_analysis.html")
 
 
