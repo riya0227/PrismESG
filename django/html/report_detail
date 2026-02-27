@@ -1,0 +1,91 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Reliance Industries Ltd.</h3>
+            <small class="text-muted">BRSR Report | FY 2023-24 | Energy Sector</small>
+        </div>
+        <span class="badge bg-success fs-6 px-3 py-2">ESG Score: 78/100</span>
+    </div>
+
+    <!-- ESG Breakdown Cards -->
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-success fw-semibold">Environmental</h6>
+                    <h4 class="fw-bold">82</h4>
+                    <p class="mb-0 small text-muted">
+                        Strong carbon reduction disclosure. Missing Scope 3.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-primary fw-semibold">Social</h6>
+                    <h4 class="fw-bold">74</h4>
+                    <p class="mb-0 small text-muted">
+                        Good CSR transparency. Limited safety metrics.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="text-dark fw-semibold">Governance</h6>
+                    <h4 class="fw-bold">77</h4>
+                    <p class="mb-0 small text-muted">
+                        Strong board independence. Ethics training disclosed.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- AI Insights -->
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-3">
+                <i class="bi bi-cpu"></i> AI Extracted Insights
+            </h5>
+            <ul class="mb-0">
+                <li>Comprehensive renewable energy targets disclosed.</li>
+                <li>No third-party verification mentioned for emissions.</li>
+                <li>Governance structure improved compared to previous year.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Compliance Mapping -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-3">
+                <i class="bi bi-check2-circle"></i> BRSR Compliance Mapping
+            </h5>
+
+            <div class="progress mb-3" style="height: 20px;">
+                <div class="progress-bar bg-success" style="width: 85%;">
+                    85% Disclosure Coverage
+                </div>
+            </div>
+
+            <small class="text-muted">
+                102 indicators disclosed out of 120 required.
+            </small>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
