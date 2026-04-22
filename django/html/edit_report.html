@@ -2,15 +2,154 @@
 
 {% block content %}
 
-<h2>Edit Report</h2>
+<div class="edit-page">
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+    <!-- HEADER -->
+    <div class="edit-header">
+        <h3>Edit Report</h3>
+        <p>Update report name or upload a new ESG file</p>
+    </div>
 
-    <p>{{ report.title }}</p>
+    <!-- CARD -->
+    <div class="edit-card">
 
-    <input type="file" name="pdf_file">
-    <button type="submit">Update</button>
-</form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- REPORT NAME -->
+            <div class="form-group">
+                <label>Report name</label>
+                <input type="text" name="title" value="{{ report.title }}" class="input-field">
+            </div>
+
+            <!-- FILE INPUT -->
+            <div class="form-group">
+                <label>Upload new file (optional)</label>
+
+                <div class="file-upload-box">
+                    <input type="file" name="pdf_file" id="fileInput" hidden>
+
+                    <label for="fileInput" class="upload-btn">
+                        Choose file
+                    </label>
+
+                    <span id="fileName">No file chosen</span>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="update-btn">
+                Update Report
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<style>
+
+/* PAGE */
+.edit-page{
+    padding:40px;
+    background:#f8fafc;
+    min-height:100vh;
+}
+
+/* HEADER */
+.edit-header h3{
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.edit-header p{
+    font-size:13px;
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.edit-card{
+    max-width:520px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:25px;
+}
+
+/* FORM */
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    font-size:13px;
+    margin-bottom:6px;
+    display:block;
+}
+
+/* INPUT */
+.input-field{
+    width:100%;
+    padding:10px;
+    border:1px solid #e5e7eb;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.input-field:focus{
+    outline:none;
+    border-color:#16a34a;
+}
+
+/* FILE UPLOAD */
+.file-upload-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.upload-btn{
+    background:#f1f5f9;
+    border:1px solid #e5e7eb;
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.upload-btn:hover{
+    background:#e2e8f0;
+}
+
+#fileName{
+    font-size:13px;
+    color:#64748b;
+}
+
+/* BUTTON */
+.update-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.update-btn:hover{
+    background:#15803d;
+}
+
+</style>
+
+<script>
+document.getElementById("fileInput").addEventListener("change", function(){
+    const fileName = this.files[0]?.name || "No file chosen";
+    document.getElementById("fileName").textContent = fileName;
+});
+</script>
 
 {% endblock %}
