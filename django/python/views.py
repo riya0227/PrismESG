@@ -109,7 +109,28 @@ def edit_report(request, report_id):
     report = get_object_or_404(ESGReport, id=report_id)
 
     if request.method == "POST":
-        report.pdf_file = request.FILES['pdf_file']
+        new_title = request.POST.get("title")
+        new_file = request.FILES.get("pdf_file")  # ✅ SAFE
+
+        # ✅ Update title if provided
+        if new_title and new_title.strip():
+            report.title = new_title
+
+        # ✅ Update file only if uploaded
+        if new_file:
+            report.pdf_file = new_file
+
+            # OPTIONAL: re-run pipeline if file changed
+            pdf_path = report.pdf_file.path
+            result = run_full_pipeline(pdf_path, str(report.id))
+
+            scores = result["scores"]
+            report.environmental_score = scores.get("E", 0)
+            report.social_score = scores.get("S", 0)
+            report.governance_score = scores.get("G", 0)
+            report.extracted_text = result["full_text"]
+            report.status = "processed"
+
         report.save()
         return redirect('report_list')
 
