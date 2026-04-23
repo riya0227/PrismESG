@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class ESGReport(models.Model):
     STATUS_CHOICES = [
@@ -7,6 +8,7 @@ class ESGReport(models.Model):
         ('incomplete', 'Incomplete'),
     ]
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     pdf_file = models.FileField(upload_to='reports/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
@@ -25,3 +27,7 @@ class ESGReport(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    from django.contrib.auth.models import User
+
