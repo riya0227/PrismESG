@@ -1,0 +1,28 @@
+# Core
+numpy==1.26.4
+scikit-learn==1.3.2
+tqdm==4.66.1
+
+# NLP / Embeddings
+sentence-transformers==2.2.2
+
+# Vector Search
+faiss-cpu==1.7.4
+
+# PDF Processing
+pdfplumber==0.10.3
+
+# Backend
+django==4.2.7
+
+# API / Requests
+requests==2.31.0
+
+# LLM (Gemini)
+google-generativeai==0.5.4
+
+# UI (for testing)
+streamlit==1.32.0
+
+# Optional (clean env handling)
+python-dotenv==1.0.1

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+
+# VS Code
+.vscode/
+
+# Data files
+*.pdf
+
+# Storage (generated files)
+backend/storage/
+backend/data/
+
+# Model files
+*.pkl
+*.index
