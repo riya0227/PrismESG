@@ -1,0 +1,80 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- LEFT PROFILE CARD -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                         width="120"
+                         class="rounded-circle mb-3">
+
+                    <h4>Riya Singh</h4>
+                    <p class="text-muted">ESG Analyst</p>
+
+                    <button class="btn btn-outline-dark btn-sm mt-2">
+                        Change Photo
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT ACCOUNT DETAILS -->
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h5 class="mb-4">Account Information</h5>
+
+                    <form>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control"
+                                       value="Riya Singh">
+                            </div>
+
+                            <div class="col">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control"
+                                       value="riya@example.com">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Role</label>
+                                <input type="text" class="form-control"
+                                       value="Administrator">
+                            </div>
+
+                            <div class="col">
+                                <label class="form-label">Organization</label>
+                                <input type="text" class="form-control"
+                                       value="ESG Research Lab">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">
+                            Save Changes
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

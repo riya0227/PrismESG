@@ -1,0 +1,993 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="home">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
+
+            <!-- LEFT -->
+            <div>
+                <h1 class="hero-title">
+                    AI-powered ESG intelligence
+                </h1>
+
+                <p class="hero-text">
+                    Analyze sustainability disclosures, detect reporting gaps,
+                    and generate ESG insights using AI.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="{% url 'upload_report' %}" class="btn btn-success btn-lg">
+                        Upload Report
+                    </a>
+                    <a href="{% url 'analytics' %}" class="btn btn-outline-dark btn-lg">
+                        View Dashboard
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="hero-img">
+                <img src="{% static 'images/dashboard-preview.png' %}" alt="Dashboard">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust text-center">
+        <p class="text-muted mb-2">
+            Designed for ESG Analysts • Consultants • Financial Institutions
+        </p>
+
+        <div class="trust-items">
+            <span>GRI</span>
+            <span>BRSR</span>
+            <span>TCFD</span>
+            <span>SASB</span>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+ 
+<section class="features-carousel">
+    <div class="container">
+
+        <p class="section-label">FEATURES</p>
+        <h2 class="section-title">Everything your ESG workflow needs</h2>
+        <p class="section-sub">
+            From raw PDF to board-ready disclosure analysis — without a team of analysts.
+        </p>
+
+        <div class="carousel-wrapper">
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-clipboard"></i></div>
+                <h5>Automated disclosure extraction</h5>
+                <p>AI reads your reports and classifies ESG disclosures automatically.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-search"></i></div>
+                <h5>Gap detection and alerts</h5>
+                <p>Identify missing disclosures and compliance gaps instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-activity"></i></div>
+                <h5>E, S, G scoring</h5>
+                <p>Generate quantified ESG scores with trend analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-file-earmark"></i></div>
+                <h5>Structured report export</h5>
+                <p>Export compliance-ready ESG reports for stakeholders.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-grid"></i></div>
+                <h5>Multi-framework mapping</h5>
+                <p>Analyze reports across GRI, BRSR, TCFD, SASB.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box"><i class="bi bi-people"></i></div>
+                <h5>Team collaboration</h5>
+                <p>Share insights and manage ESG workflows together.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <!-- VALUE -->
+   <section class="value">
+    <div class="container value-grid">
+
+        <!-- LEFT -->
+        <div class="value-text">
+
+            <h2>Built for ESG compliance and reporting</h2>
+
+            <p class="value-sub">
+                Align with ESG frameworks, monitor disclosures, and generate actionable insights.
+            </p>
+
+            <!-- BULLET POINTS -->
+            <div class="value-points">
+                <p><i class="bi bi-check-circle-fill"></i> Framework-aligned ESG analysis</p>
+                <p><i class="bi bi-check-circle-fill"></i> Real-time disclosure insights</p>
+                <p><i class="bi bi-check-circle-fill"></i> Automated compliance tracking</p>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="value-img">
+            <img src="{% static 'images/analytics.png' %}" alt="ESG Platform">
+        </div>
+
+    </div>
+</section>
+
+    <!-- HOW IT WORKS -->
+<section class="how">
+
+    <div class="container">
+
+        <!-- HEADER (CENTERED) -->
+        <div class="how-header text-center">
+            <p class="section-label">HOW IT WORKS</p>
+
+            <h2 class="section-title">
+                From upload to insight in four steps
+            </h2>
+
+            <p class="section-sub">
+                No configuration, no onboarding calls, no manual setup. Just upload and go.
+            </p>
+        </div>
+
+        <!-- STEPS -->
+        <div class="how-steps">
+
+            <!-- LINE -->
+            <div class="how-line"></div>
+
+            <!-- STEP 1 -->
+            <div class="step">
+                <div class="step-circle">01</div>
+                <h6>Upload your report</h6>
+                <p>Drag in a PDF, DOCX, or scanned ESG / BRSR document.</p>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="step">
+                <div class="step-circle">02</div>
+                <h6>AI reads and extracts</h6>
+                <p>Disclosures are extracted and classified automatically.</p>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="step">
+                <div class="step-circle">03</div>
+                <h6>Gaps are surfaced</h6>
+                <p>Missing disclosures and risks are flagged clearly.</p>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="step">
+                <div class="step-circle">04</div>
+                <h6>Export and act</h6>
+                <p>Download structured reports or share insights.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="use-section">
+
+    <div class="use-container">
+
+        <!-- HEADER -->
+        <div class="use-header">
+            <p class="use-label">WHO USES IT</p>
+            <h2 class="use-title">Purpose-built for ESG professionals</h2>
+            <p class="use-sub">
+                Whether you're an analyst inside a company or a consultant serving twenty clients.
+            </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="use-grid">
+
+            <!-- CARD 1 -->
+            <div class="use-card">
+                <div class="use-icon">
+                    <i class="bi bi-bar-chart"></i>
+                </div>
+
+                <h5>ESG analysts</h5>
+                <p>
+                    Stop spending weeks mapping disclosures manually. PrismESG handles extraction so you can focus on interpretation and strategy.
+                </p>
+
+                <div class="tags">
+                    <span>Automated scoring</span>
+                    <span>Gap reports</span>
+                    <span>Trends</span>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="use-card">
+                <div class="use-icon">
+                    <i class="bi bi-briefcase"></i>
+                </div>
+
+                <h5>Sustainability consultants</h5>
+                <p>
+                    Deliver faster, more consistent assessments across your entire client book. Standardize outputs and scale without adding headcount.
+                </p>
+
+                <div class="tags">
+                    <span>Multi-client</span>
+                    <span>Export-ready</span>
+                    <span>White-label</span>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="use-card">
+                <div class="use-icon">
+                    <i class="bi bi-bank"></i>
+                </div>
+
+                <h5>Financial institutions</h5>
+                <p>
+                    Screen investments and evaluate ESG risk across portfolios. Benchmark holdings and flag exposure before it reaches the board.
+                </p>
+
+                <div class="tags">
+                    <span>Portfolio screening</span>
+                    <span>Benchmarking</span>
+                    <span>Risk</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="faq-section">
+
+    <div class="faq-container">
+
+        <!-- HEADER -->
+        <div class="faq-header">
+            <p class="faq-label">FAQ</p>
+            <h2>Common questions</h2>
+            <p class="faq-sub">
+                Can't find your answer? Write to us at hello@prismesg.com
+            </p>
+        </div>
+
+        <!-- FAQ ITEMS -->
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What file formats does PrismESG support?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                PrismESG supports PDF, DOCX, and scanned documents via OCR. Most BRSR and ESG reports in India are published as PDFs, and we handle both text-native and scanned versions.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How accurate is the AI extraction?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Our extraction model achieves 92% accuracy on standard ESG disclosures across GRI and BRSR frameworks, validated on 200+ Indian sustainability reports.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is my report data kept confidential?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes. Each workspace is fully isolated. Reports you upload are never used to train models and are not visible to other users.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I analyze reports for multiple companies?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes. Professional and Enterprise plans support multiple company workspaces with isolated analysis and reporting.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+    <div class="cta-container">
+
+
+        <h2 class="cta-title">
+            Ready to modernize your ESG workflow?
+        </h2>
+
+        <p class="cta-sub">
+            Join analysts and consultants already using PrismESG to work faster and report with confidence.
+        </p>
+
+        <!-- SINGLE BUTTON -->
+        <a href="{% url 'upload_report' %}" class="btn cta-btn">
+            Get Started
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- FOOTER -->
+    
+</div>
+
+<style>
+
+/* BACKGROUND */
+.home {
+    background: #f1f5f9;
+}
+
+/* HERO */
+.hero {
+    background: #eaf5ef;   /* soft green */
+    padding: 80px 0;
+    width: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.hero-text {
+    margin-top: 15px;
+    color: #475569;
+}
+
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.hero-img img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+/* TRUST */
+.trust {
+    background: #eaf5ef;
+    padding: 25px 0;
+}
+
+.trust-items span {
+    margin: 0 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.features-carousel {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+/* TEXT */
+.section-label {
+    color: #16a34a;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.section-sub {
+    color: #475569;
+    margin-bottom: 40px;
+}
+
+/* SCROLL CONTAINER */
+.carousel-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+/* HIDE SCROLLBAR */
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* CARD */
+.feature-card {
+    min-width: 300px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    scroll-snap-align: start;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ICON */
+.icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* VALUE */
+.value {
+    padding: 60px 0;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.value img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* HOW */
+.how {
+    padding: 60px 0;
+}
+
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.step span {
+    font-weight: 700;
+    color: #16a34a;
+}
+
+/* USE */
+.use {
+    padding: 60px 0;
+}
+
+/* CTA */
+.cta {
+    padding: 60px 0;
+}
+
+/* FOOTER */
+
+/* BOTTOM */
+
+
+/* TITLES */
+.section-title {
+    font-weight: 600;
+}
+
+/* SECTION */
+.features-large {
+    background: #ffffff;
+    padding: 90px 0;
+}
+
+/* GRID */
+.features-large-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    text-align: center;
+}
+
+/* CARD */
+.feature-large {
+    max-width: 320px;
+    margin: auto;
+}
+
+/* ICON */
+.icon-large {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 2px solid #84cc16; /* green outline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #84cc16;
+    font-size: 32px;
+}
+
+/* TITLE */
+.feature-large h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.feature-large p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* SECTION */
+.how {
+    background: #ffffff;   /* white background */
+    padding: 90px 0;
+}
+
+/* GRID */
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    text-align: center;
+}
+
+/* STEP */
+.step {
+    max-width: 320px;
+    margin: auto;
+}
+
+/* ICON (UPDATED TO CIRCLE OUTLINE STYLE) */
+.step-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #84cc16;   /* green outline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    background: transparent;     /* remove filled bg */
+}
+
+/* ICON SIZE */
+.step-icon i {
+    font-size: 28px;
+    color: #84cc16;              /* green icon */
+}
+
+/* STEP NUMBER */
+.step-number {
+    display: block;
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* TITLE */
+.step h5 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+.step p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.use-section {
+    background: #eaf5ef;   /* soft green tint */
+    padding: 90px 0;
+}
+
+/* container without Bootstrap box feel */
+.use-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.use-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.use-label {
+    color: #16a34a;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.use-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.use-sub {
+    color: #475569;
+    margin-top: 10px;
+}
+
+/* GRID */
+.use-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+.use-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #d1fae5;
+    transition: 0.25s ease;
+}
+
+.use-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.use-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #dcfce7;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.use-icon i {
+    font-size: 18px;
+}
+
+/* TEXT */
+.use-card h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.use-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* TAGS */
+.tags {
+    margin-top: 15px;
+}
+
+.tags span {
+    display: inline-block;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-right: 6px;
+    margin-top: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .use-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* SECTION */
+.how {
+    background: #ffffff;
+    padding: 100px 0;
+}
+
+/* HEADER */
+.how-header {
+    max-width: 700px;
+    margin: 0 auto 70px;
+}
+
+.section-label {
+    color: #16a34a;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 30px;   /* cleaner, balanced */
+    font-weight: 600;
+}
+
+.section-sub {
+    color: #475569;
+    font-size: 16px;
+}
+
+/* STEPS CONTAINER */
+.how-steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+/* LINE */
+.how-line {
+    position: absolute;
+    top: 35px;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: #bbf7d0;
+    z-index: 0;
+}
+
+/* STEP */
+.step {
+    position: relative;
+    z-index: 1;
+}
+
+/* CIRCLE */
+.step-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+}
+
+/* TEXT */
+.step h6 {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.step p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.faq-section {
+    background: #ffffff;
+    padding: 90px 0;
+}
+
+.faq-container {
+    width: 85%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* HEADER */
+.faq-header {
+    margin-bottom: 40px;
+}
+
+.faq-label {
+    color: #16a34a;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.faq-header h2 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #0f172a;
+}
+
+.faq-sub {
+    color: #64748b;
+}
+
+/* ITEM */
+.faq-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+/* QUESTION */
+.faq-question {
+    padding: 18px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+}
+
+/* ICON */
+.faq-icon {
+    font-size: 20px;
+    color: #64748b;
+    transition: 0.3s;
+}
+
+/* ANSWER */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 15px 20px;
+}
+
+.faq-item.active .faq-icon {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+.cta-section {
+    background: #eaf5ef;   /* soft green */
+    padding: 90px 0;
+    text-align: center;
+}
+
+.cta-container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.cta-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.cta-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.cta-sub {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.cta-btn {
+    background: #16a34a;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.25s;
+}
+
+.cta-btn:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+</style>
+
+
+<script>
+document.querySelectorAll(".faq-question").forEach(item => {
+    item.addEventListener("click", () => {
+
+        const parent = item.parentElement;
+
+        // close others (optional - remove if you want multiple open)
+        document.querySelectorAll(".faq-item").forEach(el => {
+            if (el !== parent) {
+                el.classList.remove("active");
+                el.querySelector(".faq-icon").innerText = "+";
+            }
+        });
+
+        // toggle current
+        parent.classList.toggle("active");
+
+        const icon = item.querySelector(".faq-icon");
+        icon.innerText = parent.classList.contains("active") ? "−" : "+";
+
+    });
+});
+</script>
+
+{% endblock %}

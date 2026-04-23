@@ -1,0 +1,308 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+
+<style>
+
+/* PAGE */
+.main{
+    padding:28px 36px;
+    background:#f8fafc;
+    min-height:100vh;
+}
+
+/* HEADER */
+.page-hdr{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:24px;
+}
+
+.greeting{
+    font-size:20px;
+    font-weight:500;
+    color:#0f172a;
+}
+
+.greeting-sub{
+    font-size:13px;
+    color:#64748b;
+}
+
+/* BUTTONS */
+.hdr-actions{
+    display:flex;
+    gap:10px;
+}
+
+.btn-outline{
+    font-size:12px;
+    color:#64748b;
+    background:white;
+    border:1px solid #e2e8f0;
+    padding:7px 14px;
+    border-radius:7px;
+}
+
+.btn-primary{
+    font-size:12px;
+    font-weight:500;
+    color:white;
+    background:#16a34a;
+    padding:8px 16px;
+    border-radius:7px;
+    text-decoration:none;
+}
+
+/* STATS */
+.stat-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.stat{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+    padding:18px;
+}
+
+.stat-n{
+    font-size:26px;
+    font-weight:500;
+}
+
+.stat-l{
+    font-size:12px;
+    color:#64748b;
+}
+
+/* MID */
+.mid-row{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+}
+
+.card-hdr{
+    padding:14px 18px;
+    border-bottom:1px solid #f1f5f9;
+    font-size:13px;
+    font-weight:500;
+}
+
+/* CHART */
+.chart-area{
+    padding:20px;
+}
+
+.chart-bars{
+    display:flex;
+    gap:10px;
+    align-items:flex-end;
+    height:120px;
+}
+
+.bar{
+    width:20px;
+    border-radius:4px 4px 0 0;
+}
+
+/* SCORE */
+.score-overview{
+    padding:20px;
+}
+
+.so-company{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.so-track{
+    height:6px;
+    background:#e5e7eb;
+    border-radius:5px;
+}
+
+.so-fill{
+    height:100%;
+    border-radius:5px;
+}
+
+/* BOTTOM */
+.bottom-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+/* REPORTS */
+.report-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 18px;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.report-name{
+    font-weight:500;
+}
+
+.report-meta{
+    font-size:11px;
+    color:#94a3b8;
+}
+
+.report-score-n{
+    font-weight:500;
+}
+
+/* FRAMEWORK */
+.fw-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 18px;
+}
+
+.fw-bar-wrap{
+    flex:1;
+    height:6px;
+    background:#e5e7eb;
+    border-radius:5px;
+}
+
+.fw-bar-fill{
+    height:100%;
+    border-radius:5px;
+}
+
+/* ACTIVITY */
+.act-item{
+    padding:12px 18px;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.act-text{
+    font-size:13px;
+    color:#475569;
+}
+
+</style>
+
+<div class="main">
+
+  <!-- HEADER -->
+  <div class="page-hdr">
+    <div>
+      <div class="greeting">Good morning, Riya</div>
+      <div class="greeting-sub">
+        Here's a summary of your ESG workspace — last updated today
+      </div>
+    </div>
+
+    <div class="hdr-actions">
+      <div class="btn-outline">Export all</div>
+      <a href="{% url 'upload_report' %}" class="btn-primary">Upload report</a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-n">8</div>
+      <div class="stat-l">Reports analyzed</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-n">79</div>
+      <div class="stat-l">Avg. ESG score</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-n">12</div>
+      <div class="stat-l">Disclosure gaps</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-n">3</div>
+      <div class="stat-l">Greenwash risks</div>
+    </div>
+  </div>
+
+  <!-- MID -->
+  <div class="mid-row">
+
+    <div class="card">
+      <div class="card-hdr">ESG scores</div>
+      <div class="chart-area">
+        <div class="chart-bars">
+          <div class="bar" style="height:90px;background:#16a34a"></div>
+          <div class="bar" style="height:74px;background:#2563eb"></div>
+          <div class="bar" style="height:77px;background:#d97706"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">Latest report</div>
+      <div class="score-overview">
+        <div class="so-company">
+          <span>Reliance</span>
+          <span>78</span>
+        </div>
+        <div class="so-track">
+          <div class="so-fill" style="width:78%;background:#16a34a"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="bottom-row">
+
+    <div class="card">
+      <div class="card-hdr">Recent reports</div>
+      <div class="report-item">
+        <div>
+          <div class="report-name">Reliance</div>
+          <div class="report-meta">2 days ago</div>
+        </div>
+        <div class="report-score-n">78</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">Framework coverage</div>
+      <div class="fw-item">
+        <span>BRSR</span>
+        <div class="fw-bar-wrap">
+          <div class="fw-bar-fill" style="width:85%;background:#16a34a"></div>
+        </div>
+        <span>85%</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">Activity</div>
+      <div class="act-item">
+        <div class="act-text">Report analyzed successfully</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

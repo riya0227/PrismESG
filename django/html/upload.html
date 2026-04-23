@@ -1,0 +1,232 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+
+<div class="container-fluid upload-page">
+
+    <!-- HEADER -->
+    <div class="upload-header">
+
+        <h2>Upload ESG report</h2>
+
+        <p class="text-muted">
+            Upload a sustainability or BRSR document to automatically extract disclosures, detect gaps, and generate an ESG score.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- LEFT -->
+        <div class="col-lg-8">
+
+            <div class="card upload-card">
+                <div class="card-body">
+
+                    <h5 class="fw-semibold mb-1">Report details</h5>
+                    <p class="text-muted small mb-4">
+                        Fill in the details below before uploading your document
+                    </p>
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="row g-3">
+
+                            <!-- TITLE -->
+                            <div class="col-md-6">
+                                <label>Report title</label>
+                                <input type="text"
+                                       name="title"
+                                       class="form-control"
+                                       placeholder="e.g. HUL BRSR 2024"
+                                       required>
+                            </div>
+
+                            <!-- COMPANY -->
+                            <div class="col-md-6">
+                                <label>Company name</label>
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="e.g. Hindustan Unilever">
+                            </div>
+
+                        </div>
+
+                        <!-- UPLOAD BOX -->
+                        <div class="upload-box mt-4 text-center">
+
+                            <i class="bi bi-upload upload-icon"></i>
+
+                            <h6 class="mt-3">Drag and drop your file here</h6>
+
+                            <p class="text-muted small">
+                                Supports PDF, DOCX, and scanned documents. Max 20MB.
+                            </p>
+
+                            <input type="file"
+                                   name="pdf_file"
+                                   class="form-control border-0 text-center"
+                                   required>
+
+                            <div class="file-tags mt-3">
+                                <span>PDF</span>
+                                <span>DOCX</span>
+                                <span>Scanned</span>
+                            </div>
+
+                        </div>
+
+                        <!-- FOOTER -->
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+
+                            <small class="text-muted">
+                                🔒 Your data is encrypted and never shared
+                            </small>
+
+                            <button type="submit" class="btn btn-success px-4">
+                                Upload & Analyze
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-lg-4">
+
+            <!-- GUIDELINES -->
+            <div class="card side-card mb-3">
+                <div class="card-body">
+
+                    <h6 class="fw-semibold mb-3">Upload guidelines</h6>
+
+                    <ul class="guidelines">
+                        <li>✔ ESG / BRSR reports supported</li>
+                        <li>✔ PDF or DOCX recommended</li>
+                        <li>✔ Max 20 MB per file</li>
+                        <li>✔ AI analysis runs automatically</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- FRAMEWORKS -->
+            <div class="card side-card">
+                <div class="card-body">
+
+                    <h6 class="fw-semibold mb-3">Supported frameworks</h6>
+
+                    <div class="framework">
+                        <span>GRI Standards</span>
+                        <span class="badge bg-success">Supported</span>
+                    </div>
+
+                    <div class="framework">
+                        <span>BRSR Core</span>
+                        <span class="badge bg-success">Supported</span>
+                    </div>
+
+                    <div class="framework">
+                        <span>TCFD</span>
+                        <span class="badge bg-success">Supported</span>
+                    </div>
+
+                    <div class="framework">
+                        <span>SASB</span>
+                        <span class="badge bg-success">Supported</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+/* PAGE */
+.upload-page {
+    background: #f1f5f9;
+    padding: 30px;
+}
+
+/* HEADER */
+.upload-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* CARDS */
+.upload-card, .side-card {
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+/* INPUT */
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+    border: 2px dashed #cbd5f5;
+    border-radius: 14px;
+    padding: 35px;
+    background: #f8fafc;
+    transition: 0.2s;
+}
+
+.upload-box:hover {
+    background: #eef2ff;
+}
+
+/* ICON */
+.upload-icon {
+    font-size: 30px;
+    color: #16a34a;
+}
+
+/* TAGS */
+.file-tags span {
+    background: #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+/* GUIDELINES */
+.guidelines {
+    list-style: none;
+    padding: 0;
+}
+
+.guidelines li {
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+/* FRAMEWORK */
+.framework {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn-success {
+    border-radius: 10px;
+    padding: 10px 18px;
+}
+
+</style>
+
+{% endblock %}
