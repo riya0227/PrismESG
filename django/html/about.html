@@ -1,0 +1,181 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<div class="about-page">
+
+    <!-- HERO -->
+    <div class="about-hero">
+        <h1>PrismESG</h1>
+        <p>
+            An AI platform for analyzing ESG disclosures with consistency, speed, and transparency.
+        </p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="about-container">
+
+        <!-- LEFT -->
+        <div class="about-main">
+
+            <section>
+                <h4>Overview</h4>
+                <p>
+                    ESG reporting has grown rapidly in scale and complexity, but the process of evaluating
+                    disclosures remains largely manual and inconsistent. PrismESG addresses this gap by
+                    applying structured analysis to sustainability reports using machine learning models.
+                </p>
+                <p>
+                    The platform is designed to extract disclosures, classify them into standardized
+                    categories, and identify gaps where reporting lacks measurable evidence.
+                </p>
+            </section>
+
+            <section>
+                <h4>What the platform does</h4>
+                <ul>
+                    <li>Extracts ESG disclosures from BRSR and sustainability reports</li>
+                    <li>Classifies content into Policy, Action, and Metric layers</li>
+                    <li>Identifies reporting gaps and weak disclosures</li>
+                    <li>Evaluates imbalance across ESG pillars</li>
+                    <li>Flags potential greenwashing risk</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>Approach</h4>
+                <p>
+                    PrismESG uses a structured PAM (Policy–Action–Metric) framework to evaluate disclosures.
+                    The system prioritizes measurable evidence over narrative statements, allowing for a
+                    more objective assessment of ESG quality.
+                </p>
+                <p>
+                    Outputs are standardized to ensure comparability across companies, sectors, and reporting periods.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="about-side">
+
+            <div class="about-card">
+                <h6>Use cases</h6>
+                <p>Investment research</p>
+                <p>ESG consulting</p>
+                <p>Corporate reporting review</p>
+            </div>
+
+            <div class="about-card">
+                <h6>Framework alignment</h6>
+                <p>BRSR (India)</p>
+                <p>GRI</p>
+                <p>TCFD</p>
+                <p>SASB</p>
+            </div>
+
+            <div class="about-card">
+                <h6>Key focus</h6>
+                <p>Consistency in analysis</p>
+                <p>Reduction of manual effort</p>
+                <p>Detection of weak disclosures</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+/* PAGE */
+.about-page{
+    padding:40px;
+    background:#f8fafc;
+}
+
+/* HERO */
+.about-hero{
+    max-width:800px;
+    margin:0 auto 40px;
+    text-align:center;
+}
+
+.about-hero h1{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.about-hero p{
+    color:#64748b;
+    font-size:15px;
+}
+
+/* LAYOUT */
+.about-container{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:40px;
+}
+
+/* LEFT */
+.about-main section{
+    margin-bottom:30px;
+}
+
+.about-main h4{
+    font-size:16px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.about-main p{
+    font-size:14px;
+    color:#475569;
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+.about-main ul{
+    padding-left:18px;
+}
+
+.about-main li{
+    font-size:14px;
+    color:#475569;
+    margin-bottom:6px;
+}
+
+/* RIGHT */
+.about-side{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.about-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:16px;
+}
+
+.about-card h6{
+    font-size:13px;
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.about-card p{
+    font-size:13px;
+    color:#64748b;
+    margin-bottom:4px;
+}
+
+</style>
+
+{% endblock %}
